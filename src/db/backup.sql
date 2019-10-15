@@ -7,17 +7,20 @@ create table tipoDoc(
     nombre varchar(15) not null
 );
 
-create table client(
-    id int(11) auto_increment primary key,
-    tipo_doc int(2),
-    nombre varchar(25) not null,
-    apellido varchar (25) not null,
-    num_tel varchar(15) not null unique,
-    fecha_inicio date,
-    fec_nacimiento date,
-    modification timestamp on update current_timestamp,
-    foreign key (tipo_doc) references tipoDoc(id)
-);
+CREATE TABLE `client` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `tipo_doc` int(2) DEFAULT NULL,  
+    `nombre` varchar(25) NOT NULL,  
+    `apellido` varchar(25) NOT NULL,  
+    `num_tel` varchar(15) NOT NULL,  
+    `fecha_inicio` date DEFAULT NULL,  
+    `fec_nacimiento` date DEFAULT NULL, 
+    `creation` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,  
+    PRIMARY KEY (`id`),  
+    UNIQUE KEY `num_tel` (`num_tel`),  
+    KEY `tipo_doc` (`tipo_doc`),  
+    CONSTRAINT `client_ibfk_1` FOREIGN KEY (`tipo_doc`) REFERENCES `tipodoc` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+); 
 
 create table evolution(
     id int(11) auto_increment primary key,

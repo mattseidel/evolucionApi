@@ -26,4 +26,21 @@ router.post('/', (req, res, next) => {
     })
 })
 
+router.put('/:id', (req, res, next) => {
+    var data = req.body;
+    var id = req.params.id;
+    database.query('update client set ? where id = ?', [data, id]).then(rows =>{
+        res.send('se ha modificado correctamente!')
+    }).catch(err =>{
+        next(err)
+    })
+})
+
+router.delete('/:id',(req,res,next) =>{
+    var id = req.params.id
+    database.query('delete from client where id = ?',id).then(rows =>{
+        res.send('se ha eliminado correctamente!')
+    })
+})
+
 module.exports = router;
