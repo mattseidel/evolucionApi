@@ -1,0 +1,26 @@
+{
+  "name": "evolucion_apis",
+  "version": "0.0.1",
+  "description": "api para el proyecto de evolución de pacientes",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./src/app/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattseidel/evolucionApi.git"
+  },
+  "author": "MattSeidel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattseidel/evolucionApi/issues"
+  },
+  "homepage": "https://github.com/mattseidel/evolucionApi#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "mysql": "^2.17.1",
+    "nodemon": "^1.19.3"
+  }
+}
