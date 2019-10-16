@@ -42,3 +42,10 @@ create table evolution(
     muslo int(3) unsigned not null,
     foreign key (client) references client(id)    
 );
+
+create table user(
+    id int(11) primary key auto_increment,
+    nombre varchar(25) not null,
+    username varchar(25) not null unique,
+    password varchar(25) not null
+);
